@@ -19,7 +19,8 @@ LANGUAGES = {
 def save_img(porcents):
     import matplotlib.pyplot as plt
 
-    plt.pie(list(porcents.values()), labels=porcents.keys())
+    wedges, _, _ = plt.pie(list(porcents.values()), autopct="%1.1%%")
+    plt.legends(wedges, porcents.keys(), bbox_to_anchor=(0, 1))
     plt.savefig("porcentagem_linguagens.png", transparent=True)
 
 
